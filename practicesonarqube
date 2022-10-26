@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#Author Eric SOtsky
+# Oct 25
+## SOnarqube install on centos 7
+
+
+## Please use this as user vagrant
+
+user_name=`whoami`
+
+if [ $user_name != vagrant ];
+
+then
+
+echo "Must be run as user vagrant"
+
+exit 1
+
+fi
+
+sudo yum update -y
+
+sudo yum install java-11-openjdk-devel -y
+
+sudo yum install java-11-openjdk -y
+
+
+
+cd /opt
+
+sudo yum install wget unzip -y
+
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.3.0.51899.zip       
+
+"sonaqube_install.sh"
